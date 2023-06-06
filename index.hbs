@@ -27,7 +27,7 @@ into the {body} of the default.hbs template --}}
                     <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
                 </div>
             {{/if}}
-            {{#match @custom.navigation_layout "Logo on cover"}}
+            {{#match @custom.navigation_layout "Logo on cover ldf"}}
                 {{#if @site.logo}}
                     <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
                 {{else}}
@@ -36,6 +36,13 @@ into the {body} of the default.hbs template --}}
             {{/match}}
             {{#if @site.description}}
                 <p class="site-description">{{@site.description}}</p>
+                {{#unless @member}}
+                    <br><br>
+                    <a class="footer-cta-button gh-portal-close" href="#/portal" data-portal="">
+                    <div class="footer-cta-input">Enter your email</div>
+                    <span>Subscribe</span>
+                {{/unless}}
+            </a>
             {{/if}}
         </div>
     {{/match}}
